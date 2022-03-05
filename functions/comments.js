@@ -16,6 +16,8 @@ exports.handler = async (event) => {
        statusCode: 429,
         body: JSON.stringify({ error: 'Unable to fetch comments at this time. Check back later.' }),
     };
+   body: JSON.stringify({ OK: 'Appel OK.' }),
+
    const response = await octokitClient.issues.listComments({
    owner: `pubrondeau`,
    repo: `a11y`,
