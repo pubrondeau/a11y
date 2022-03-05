@@ -11,7 +11,7 @@ exports.handler = async (event) => {
     const response = await octokitClient.issues.listComments({
      owner: `pubrondeau`,
      repo: `a11y`,
-     issue_number: issueNumber,
+     issue_number: issueNumber
 });
    } catch (e) {
     console.log(e);
