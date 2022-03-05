@@ -255,6 +255,17 @@ addEventListener("click", (e) => {
   fn(handler);
 });
 
+
+const fetchComments = async (id) => {
+  const response = await fetch(`/.netlify/functions/comments?id=${id}`);
+  const { data: comments, error } = await response.json();
+  if (error) {
+    throw new Error(error);
+  }
+  return comments;
+};
+
+
 function removeBlurredImage(img) {
   // Ensure the browser doesn't try to draw the placeholder when the real image is present.
   img.style.backgroundImage = "none";
