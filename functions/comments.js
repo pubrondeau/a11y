@@ -8,13 +8,7 @@ exports.handler = async (event) => {
     const auth = createTokenAuth(process.env.GITHUB_PERSONAL_ACCESS_TOKEN);
     const { token } = await auth();
     const octokitClient = new Octokit({ auth: token });
-    const response = await octokitClient.issues.listComments({
-     owner: `pubrondeau`,
-     repo: `a11y`,
-     issue_number: issueNumber,
-});
-
-  } catch (e) {
+   } catch (e) {
     console.log(e);
     return {
       statusCode: 500,
